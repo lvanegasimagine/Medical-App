@@ -1,5 +1,20 @@
 import React from 'react'
 import SearchBar from './SearchBar'
+import TransitionalText from './TransitionalText'
+import { Pill } from 'lucide-react'
+
+const TEXTS = [
+  'Acupuncture',
+  'Massage',
+  'Chiropractor',
+  'Dental',
+  'Cosmetic',
+  'Dietitian',
+  'Speech Therapist',
+  'Occupational',
+  'Therapist',
+  'Acupuncturist'
+]
 
 const Hero = () => {
   return (
@@ -8,62 +23,50 @@ const Hero = () => {
         <div className="mx-4 flex flex-wrap">
           <div className="w-full px-4 lg:w-5/12">
             <div className="hero-content">
-              <h1 className="text-dark mb-5 text-4xl font-bold !leading-[1.208] sm:text-[42px] lg:text-[40px] xl:text-5xl dark:text-white">
-                Kickstart Startup Website with TailGrids
+              <h1 className="text-dark mb-5 gap-y-4 text-4xl font-bold !leading-[1.208] dark:text-white sm:text-[42px] lg:text-[40px] xl:text-5xl">
+                <span>Book your</span>
+                <TransitionalText
+                  TEXTS={TEXTS}
+                  className="py-4 text-blue-700"
+                />
+                <span>Sessions now</span>
               </h1>
               <p className="text-body-color dark:text-dark-6 mb-8 max-w-[480px] text-base">
-                With TailGrids, business and students thrive together. Business
-                can perfectly match their staffing to changing demand throughout
-                the dayed.
+                Health shouldn't be a puzzle, we are cutting through the B.S to
+                bring you simple, affordable, and transparent healthcare.
               </p>
               <SearchBar />
               <ul className="flex flex-wrap items-center gap-x-4">
                 <li>
                   <a
                     href="/#"
-                    className="bg-primary hover:bg-blue-dark inline-flex items-center justify-center rounded-md border-none bg-[#3c4aac] px-6 py-3 text-center text-base font-medium text-white hover:border-none hover:bg-slate-400 hover:text-white hover:transition hover:delay-75 hover:ease-out lg:px-7"
+                    className="hover:bg-blue-dark inline-flex items-center justify-center rounded-md border-none bg-[#3c4aac] bg-primary px-6 py-3 text-center text-base font-medium text-white hover:border-none hover:bg-slate-400 hover:text-white hover:transition hover:delay-75 hover:ease-out lg:px-7"
                   >
-                    Get Started
+                    Need Doctor Urgently
                   </a>
                 </li>
                 <li>
                   <a
                     href="/#"
-                    className="hover:text-primary inline-flex items-center justify-center px-5 py-3 text-center text-base font-medium text-[#464646] dark:text-white"
+                    className="inline-flex items-center justify-center px-5 py-3 text-center text-base font-medium text-[#464646] hover:text-[#001E80] hover:text-primary dark:text-white"
                   >
                     <span className="mr-2">
-                      <svg
-                        width="24"
-                        height="25"
-                        viewBox="0 0 24 25"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle cx="12" cy="12.6152" r="12" fill="#3758F9" />
-                        <rect
-                          x="7.99893"
-                          y="14.979"
-                          width="8.18182"
-                          height="1.63636"
-                          fill="white"
-                        />
-                        <rect
-                          x="11.2717"
-                          y="7.61523"
-                          width="1.63636"
-                          height="4.09091"
-                          fill="white"
-                        />
-                        <path
-                          d="M12.0898 14.1606L14.9241 11.0925H9.25557L12.0898 14.1606Z"
-                          fill="white"
-                        />
-                      </svg>
+                      <Pill className="h-4 w-4 flex-shrink-0" />
                     </span>
-                    Download App
+                    Need a Refill
                   </a>
                 </li>
               </ul>
+              <div className="flex gap-4 py-4 pt-8">
+                <div className="flex flex-col items-center justify-center">
+                  <span className="font-bold text-blue-800 tracking-wider">600</span>
+                  <div className="text-sm text-slate-700">Active Specialists</div>
+                </div>
+                <div className="flex flex-col items-center justify-center">
+                  <span className="font-bold text-blue-800 tracking-wider">600</span>
+                  <div className="text-sm text-slate-700">Active Specialists</div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="hidden px-4 lg:block lg:w-1/12"></div>
